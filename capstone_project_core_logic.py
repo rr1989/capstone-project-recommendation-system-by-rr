@@ -141,7 +141,7 @@ def recommendation_system(p_username):
             #print(d.index[j] + ' : ' + str(i))
             predicted_list.append(d.index[j])
             k = k + 1
-            if k == 20:
+            if k == 5:
               break
         original_list.append(d.index[j])
         j = j + 1
