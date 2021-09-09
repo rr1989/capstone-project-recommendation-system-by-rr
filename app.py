@@ -13,8 +13,8 @@ def home():
 def predict():
     if (request.method == 'POST'):
         user_name = request.form["user_name"]
-        predicted_list = recommendation_system(user_name)
-        return render_template('index.html', prediction_text='Churn Output {}'.format(predicted_list))
+        predicted_list = [1,2,3] #recommendation_system(user_name)
+        return render_template('index.html', prediction_text='Recommended Product List Are  {}'.format(predicted_list))
     else :
         return render_template('index.html')
 
