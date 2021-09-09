@@ -12,20 +12,10 @@ def home():
 @app.route("/predict", methods=['POST'])
 def predict():
     if (request.method == 'POST'):
-        int_features = [x for x in request.form.values()]
-        final_features = [np.array(int_features)]
-        predicted_list = recommendation_system(final_features)
+        user_name = request.form["user_name"]
+        predicted_list = recommendation_system(user_name)
         return render_template('index.html', prediction_text='Churn Output {}'.format(predicted_list))
     else :
-        return render_template('index.html')
-
-@app.route("/predict_api", methods=['POST', 'GET'])
-def predict_api():
-    print(" request.method :",request.method)
-    if (request.method == 'POST'):
-        data = request.get_json()
-        return jsonify(recommendation_system(data.values()))
-    else:
         return render_template('index.html')
 
 
