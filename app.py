@@ -1,5 +1,5 @@
 from flask import Flask, jsonify,  request, render_template
-from sklearn.externals import joblib
+#from sklearn.externals import joblib
 from capstone_project_core_logic import recommendation_system
 import numpy as np
 
