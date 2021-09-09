@@ -146,5 +146,5 @@ def recommendation_system(p_username):
         original_list.append(d.index[j])
         j = j + 1
         #print(j)
-    return d,predicted_list,original_list
-        #return predicted_list
+    #return d,predicted_list,original_list
+    return predicted_list
