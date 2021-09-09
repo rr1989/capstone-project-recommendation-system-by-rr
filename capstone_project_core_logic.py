@@ -1,7 +1,7 @@
 
 import pandas as pd
-#import warnings
-#warnings.filterwarnings("ignore")
+import warnings
+warnings.filterwarnings("ignore")
 
 def sentiment_result_mean(product_name):
   import pandas as pd
@@ -13,7 +13,7 @@ def sentiment_result_mean(product_name):
   else:
     return 0 
   
-'''
+
 def sentiment_result(product_name,Pickled_RFC_Model):
   import pandas as pd
   #product_name = "Clorox Disinfecting Bathroom Cleaner"
@@ -63,7 +63,7 @@ def sentiment_result(product_name,Pickled_RFC_Model):
   else:
     return 0
 
-'''
+
 
 def recommendation_system(p_username):
     #import pandas as pd
@@ -74,9 +74,9 @@ def recommendation_system(p_username):
 
     # Load the Model back from file
     #commenting because getting server error at Heroku while deployment but it is working fine on Google Colab
-    #from sklearn.externals import joblib
-    #Pkl_Filename = "Pickle_LR1_Model.pkl"
-    #Pickled_RFC_Model = joblib.load("./models/Pickle_LR1_Model.pkl")
+    from sklearn.externals import joblib
+    Pkl_Filename = "Pickle_LR1_Model.pkl"
+    Pickled_RFC_Model = joblib.load("./models/Pickle_LR1_Model.pkl")
 
 
     #recommendation system
@@ -146,8 +146,8 @@ def recommendation_system(p_username):
     predicted_list = []
     original_list = []
     for i in d:
-        #predicted_result = sentiment_result(d.index[j],Pickled_RFC_Model)
-        predicted_result = sentiment_result_mean(d.index[j])
+        predicted_result = sentiment_result(d.index[j],Pickled_RFC_Model)
+        #predicted_result = sentiment_result_mean(d.index[j])
         #print(d.index[j])
         #print(predicted_result)
         if predicted_result == 1:
