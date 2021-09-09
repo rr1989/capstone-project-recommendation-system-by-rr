@@ -66,7 +66,7 @@ def sentiment_result(product_name,Pickled_RFC_Model):
 '''
 
 def recommendation_system(p_username):
-    import pandas as pd
+    #import pandas as pd
 
 
 
@@ -82,9 +82,9 @@ def recommendation_system(p_username):
     #recommendation system
 
     # import libraties
-    import pandas as pd
+    #import pandas as pd
     import numpy as np
-    import matplotlib.pyplot as plt
+    #import matplotlib.pyplot as plt
 
     ratings = pd.read_csv('./data/sample30.csv' , encoding='latin-1')
     #ratings.head()
