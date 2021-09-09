@@ -1,7 +1,7 @@
 
 import pandas as pd
-import warnings
-warnings.filterwarnings("ignore")
+#import warnings
+#warnings.filterwarnings("ignore")
 
 def sentiment_result_mean(product_name):
   import pandas as pd
@@ -13,7 +13,7 @@ def sentiment_result_mean(product_name):
   else:
     return 0 
   
-
+'''
 def sentiment_result(product_name,Pickled_RFC_Model):
   import pandas as pd
   #product_name = "Clorox Disinfecting Bathroom Cleaner"
@@ -63,13 +63,14 @@ def sentiment_result(product_name,Pickled_RFC_Model):
   else:
     return 0
 
+'''
 
 def recommendation_system(p_username):
     import pandas as pd
 
 
 
-    import pickle
+    #import pickle
 
     # Load the Model back from file
     #commenting because getting server error at Heroku while deployment but it is working fine on Google Colab
