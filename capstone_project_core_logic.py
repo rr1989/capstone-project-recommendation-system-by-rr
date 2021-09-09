@@ -3,6 +3,17 @@ import pandas as pd
 import warnings
 warnings.filterwarnings("ignore")
 
+def sentiment_result_mean(product_name):
+  import pandas as pd
+  Ebuss_df = pd.read_csv("sample30.csv")
+  index = Ebuss_df[Ebuss_df['name']==product_name].index.tolist()
+  avg_rat = Ebuss_df.loc[index]['reviews_rating'].mean()
+  if avg_rat > 4:
+    return 1
+  else:
+    return 0 
+  
+
 def sentiment_result(product_name,Pickled_RFC_Model):
   import pandas as pd
   #product_name = "Clorox Disinfecting Bathroom Cleaner"
@@ -61,12 +72,11 @@ def recommendation_system(p_username):
     import pickle
 
     # Load the Model back from file
-    from sklearn.externals import joblib
-    Pkl_Filename = "Pickle_LR1_Model.pkl"
+    #commenting because getting server error at Heroku while deployment but it is working fine on Google Colab
+    #from sklearn.externals import joblib
+    #Pkl_Filename = "Pickle_LR1_Model.pkl"
+    #Pickled_RFC_Model = joblib.load("./models/Pickle_LR1_Model.pkl")
 
-    Pickled_RFC_Model = joblib.load("./models/Pickle_LR1_Model.pkl")
-
-    #Pickled_RFC_Model
 
     #recommendation system
 
@@ -135,7 +145,8 @@ def recommendation_system(p_username):
     predicted_list = []
     original_list = []
     for i in d:
-        predicted_result = sentiment_result(d.index[j],Pickled_RFC_Model)
+        #predicted_result = sentiment_result(d.index[j],Pickled_RFC_Model)
+        predicted_result = sentiment_result_mean(d.index[j])
         #print(d.index[j])
         #print(predicted_result)
         if predicted_result == 1:
