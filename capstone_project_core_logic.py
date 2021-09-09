@@ -61,9 +61,9 @@ def recommendation_system(p_username):
 
     # Load the Model back from file
     from sklearn.externals import joblib
-    Pkl_Filename = "Pickle_XGB1_Model.pkl"
+    Pkl_Filename = "Pickle_LR1_Model.pkl"
 
-    Pickled_RFC_Model = joblib.load("./models/Pickle_XGB1_Model.pkl")
+    Pickled_RFC_Model = joblib.load("./models/Pickle_LR1_Model.pkl")
 
     #Pickled_RFC_Model
 
