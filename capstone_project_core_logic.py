@@ -1,6 +1,7 @@
 
 import pandas as pd
-
+import warnings
+warnings.filterwarnings("ignore")
 
 def sentiment_result(product_name,Pickled_RFC_Model):
   import pandas as pd
