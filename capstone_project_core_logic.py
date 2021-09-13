@@ -34,9 +34,9 @@ def sentiment_result(product_name,Pickled_RFC_Model):
   token_pattern=r'\w{1,}',
   stop_words='english',
   ngram_range=(1, 1),
-  max_features=10000)
+  max_features=60000)
   word_vectorizer.fit(review_text)
-  
+  '''
   char_vectorizer = TfidfVectorizer(
   sublinear_tf=True,
   strip_accents='unicode',
@@ -45,6 +45,7 @@ def sentiment_result(product_name,Pickled_RFC_Model):
   ngram_range=(2, 6),
   max_features=50000)
   char_vectorizer.fit(review_text)
+  '''
   
 
   index= Ebuss_df[Ebuss_df['name']==product_name].index.tolist()
@@ -54,10 +55,10 @@ def sentiment_result(product_name,Pickled_RFC_Model):
 
   train_word_features = word_vectorizer.transform(item_text)
 
-  train_char_features = char_vectorizer.transform(item_text)
+  #train_char_features = char_vectorizer.transform(item_text)
 
-  item_features = hstack([train_char_features, train_word_features])
-  #item_features = train_word_features
+  #item_features = hstack([train_char_features, train_word_features])
+  item_features = train_word_features
 
   predicted_result = Pickled_RFC_Model.predict(item_features)
 
