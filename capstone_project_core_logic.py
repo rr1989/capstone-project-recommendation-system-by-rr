@@ -74,7 +74,8 @@ def recommendation_system(p_username):
 
     # Load the Model back from file
     #commenting because getting server error at Heroku while deployment but it is working fine on Google Colab
-    from sklearn.externals import joblib
+    #from sklearn.externals 
+    import joblib
     Pkl_Filename = "Pickle_LR1_Model.pkl"
     Pickled_RFC_Model = joblib.load("./models/Pickle_LR1_Model.pkl")
 
